@@ -1,5 +1,4 @@
 ﻿using AITech.Entity.Entities.Common;
-using System.Reflection.Metadata;
 
 namespace AITech.Entity.Entities
 {
