@@ -1,0 +1,31 @@
+﻿
+@model List<ResultCategoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+
+<h1>Kategori Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <td>#</td>
+        <td>Kategori Adı</td>
+        <td>İşlemler</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>
+                <a href="/Admin/Category/DeleteCategory/@item.Id" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Category/UpdateCategory/@item.Id" class="btn btn-warning">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/Category/CreateCategory/" class="btn btn-primary">Yeni Kategori</a>
