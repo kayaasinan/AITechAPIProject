@@ -1,4 +1,5 @@
 ﻿using AITech.WebUI.DTOs.CategoryDtos;
+using AITech.WebUI.Helpers;
 using Newtonsoft.Json;
 using System.Text;
 using System.Text.Json;
@@ -7,13 +8,8 @@ namespace AITech.WebUI.Services.CategoryServices
 {
     public class CategoryService : ICategoryService
     {
-        private readonly HttpClient _client;
+        private readonly HttpClient _client = HttpClientInstance.Client;
 
-        public CategoryService(HttpClient client)
-        {
-            client.BaseAddress = new Uri("https://localhost:7074/api/");
-            _client = client;
-        }
 
         public async Task CreateAsync(CreateCategoryDto dto)
         {
