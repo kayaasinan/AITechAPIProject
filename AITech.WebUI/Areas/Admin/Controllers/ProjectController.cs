@@ -2,7 +2,7 @@
 
 namespace AITech.WebUI.Areas.Admin.Controllers
 {
-    public class ProjectController : Controller
+    public class ProjectController() : Controller
     {
         public IActionResult Index()
         {
