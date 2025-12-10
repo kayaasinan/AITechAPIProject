@@ -12,14 +12,14 @@ namespace AITech.Business.Services.BannerServices
         public async Task TMakeActiveAsync(int id)
         {
             var banner = await _bannerRepository.GetByIdAsync(id);
-            _bannerRepository.MakeActiveAsync(banner);
+            await _bannerRepository.MakeActiveAsync(banner);
             await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task TMakePassiveAsync(int id)
         {
             var banner = await _bannerRepository.GetByIdAsync(id);
-            _bannerRepository.MakePassiveAsync(banner);
+            await _bannerRepository.MakePassiveAsync(banner);
             await _unitOfWork.SaveChangesAsync();
         }
 

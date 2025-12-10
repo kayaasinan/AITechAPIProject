@@ -10,12 +10,12 @@ namespace AITech.DataAccess.Repositories.BannerRepositories
         {
         }
 
-        public void MakeActiveAsync(Banner banner)
+        public async Task MakeActiveAsync(Banner banner)
         {
             banner.IsActive = true;
         }
 
-        public void MakePassiveAsync(Banner banner)
+        public async Task MakePassiveAsync(Banner banner)
         {
             banner.IsActive = false;
         }

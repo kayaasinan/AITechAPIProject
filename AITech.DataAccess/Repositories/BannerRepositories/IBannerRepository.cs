@@ -5,7 +5,7 @@ namespace AITech.DataAccess.Repositories.BannerRepositories
 {
     public interface IBannerRepository : IRepository<Banner>
     {
-        void MakeActiveAsync(Banner banner);
-        void MakePassiveAsync(Banner banner);
+        Task MakeActiveAsync(Banner banner);
+        Task MakePassiveAsync(Banner banner);
     }
 }
