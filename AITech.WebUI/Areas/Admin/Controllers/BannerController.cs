@@ -1,0 +1,56 @@
+﻿using AITech.WebUI.Consts;
+using AITech.WebUI.DTOs.BannerDtos;
+using AITech.WebUI.Services.BannerServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+namespace AITech.WebUI.Areas.Admin.Controllers
+{
+    [Area(Roles.Admin)]
+    public class BannerController(IBannerService _bannerService) : Controller
+    {
+        public async Task<IActionResult> Index()
+        {
+            var banners = await _bannerService.GetAllAsync();
+            return View(banners);
+        }
+        public IActionResult CreateBanner()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateBanner(CreateBannerDto dto)
+        {
+            await _bannerService.CreateAsync(dto);
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> UpdateBanner(int id)
+        {
+            var banner = await _bannerService.GetByIdAsync(id);
+            return View(banner);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateBanner(UpdateBannerDto dto)
+        {
+            await _bannerService.UpdateAsync(dto);
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> DeleteBanner(int id)
+        {
+            await _bannerService.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> MakeActive(int id)
+        {
+            await _bannerService.MakeActiveAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> MakePassive(int id)
+        {
+            await _bannerService.MakePassiveAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}
