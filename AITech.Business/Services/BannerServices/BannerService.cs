@@ -26,6 +26,7 @@ namespace AITech.Business.Services.BannerServices
         public async Task TCreateAsync(CreateBannerDto createDto)
         {
             var banner = createDto.Adapt<Banner>();
+            banner.IsActive = true;
             await _bannerRepository.CreateAsync(banner);
             await _unitOfWork.SaveChangesAsync();
         }

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Layout.cshtml";
+}
+<form method="post">
+    <label>Promt Giriniz</label>
+    <input type="text" name="prompt" class="form-control" required />
+    <br />
+    <button class="btn btn-primary">Gönder</button>
+    <br />
+</form>
+
+@if(ViewBag.response!= null)
+{
+    <div class="alert alert-info mb-3">
+        <strong>Gelen Yanıt:</strong>
+        <br />
+        <p>
+            @ViewBag.response
+        </p>
+    </div>
+}
