@@ -1,0 +1,48 @@
+﻿@model CreateChooseDto
+@{
+    ViewData["Title"] = "CreateChoose";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12 d-flex align-items-stretch">
+        <div class="card w-100">
+            <div class="card-body p-4">
+                <div class="d-flex mb-4 justify-content-between align-items-center">
+                    <h5 class="mb-0 fw-bold">Yeni Tercih Alanı Oluştur</h5>
+                </div>
+
+                <form method="post">
+                    <div class="form-group mb-3">
+                        <label>Görsel Url</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Görsel Url Giriniz" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Başlık</label>
+                        <input type="text" asp-for="Title" class="form-control" placeholder="Başlık Giriniz" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Madde 1</label>
+                        <input type="text" asp-for="Item1" class="form-control" rosw="5" placeholder="Madde Giriniz" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Madde 2</label>
+                        <input type="text" asp-for="Item2" class="form-control" rosw="5" placeholder="Madde Giriniz" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Madde 3</label>
+                        <input type="text" asp-for="Item3" class="form-control" rosw="5" placeholder="Madde Giriniz" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Açıklama</label>
+                        <textarea asp-for="Description" class="form-control" rosw="5" placeholder="Açıklama Giriniz"></textarea>
+                    </div>
+                    <button class="btn btn-info">Oluştur</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

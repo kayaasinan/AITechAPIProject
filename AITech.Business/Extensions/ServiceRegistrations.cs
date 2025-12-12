@@ -1,6 +1,7 @@
 ﻿using AITech.Business.Services.AboutServices;
 using AITech.Business.Services.BannerServices;
 using AITech.Business.Services.CategoryServices;
+using AITech.Business.Services.ChooseServices;
 using AITech.Business.Services.FeatureServices;
 using AITech.Business.Services.ProjectServices;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ namespace AITech.Business.Extensions
             services.AddScoped<IBannerService, BannerService>();
             services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IFeatureService, FeatureService>();
+            services.AddScoped<IChooseService, ChooseService>();
         }
     }
 }

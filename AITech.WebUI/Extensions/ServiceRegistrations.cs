@@ -1,6 +1,7 @@
 ﻿using AITech.WebUI.Services.AboutServices;
 using AITech.WebUI.Services.BannerServices;
 using AITech.WebUI.Services.CategoryServices;
+using AITech.WebUI.Services.ChooseServices;
 using AITech.WebUI.Services.FeatureServices;
 using AITech.WebUI.Services.GeminiServices;
 using AITech.WebUI.Services.ProjectServices;
@@ -19,6 +20,7 @@ namespace AITech.WebUI.Extensions
             services.AddScoped<IBannerService, BannerService>();
             services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IFeatureService, FeatureService>();
+            services.AddScoped<IChooseService, ChooseService>();
 
 
 
