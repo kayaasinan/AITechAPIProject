@@ -2,6 +2,7 @@
 using AITech.DataAccess.Repositories.BannerRepositories;
 using AITech.DataAccess.Repositories.CategoryRepositories;
 using AITech.DataAccess.Repositories.ChooseRepositories;
+using AITech.DataAccess.Repositories.FAQRepositories;
 using AITech.DataAccess.Repositories.FeatureRepositories;
 using AITech.DataAccess.Repositories.ProjectRepositories;
 using AITech.DataAccess.UnitOfWorks;
@@ -20,6 +21,7 @@ namespace AITech.DataAccess.Extensions
             services.AddScoped<IAboutRepository, AboutRepository>();
             services.AddScoped<IFeatureRepository, FeatureRepository>();
             services.AddScoped<IChooseRepository, ChooseRepository>();
+            services.AddScoped<IFAQRepository, FAQRepository>();
         }
     }
 }
