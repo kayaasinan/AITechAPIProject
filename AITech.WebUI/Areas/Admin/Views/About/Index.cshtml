@@ -1,0 +1,63 @@
+﻿
+@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="card admin-card">
+
+    <div class="admin-header d-flex justify-content-between align-items-center">
+        <h4 class="fw-bold mb-0">Hakkımızda Sayfası</h4>
+        <a href="/Admin/About/CreateAbout/" class="btn btn-light text-dark fw-semibold">
+            <i class="bi bi-plus-circle me-1"></i> Yeni Hakkımızda Alanı
+        </a>
+    </div>
+
+    <div class="admin-table">
+        <div class="table-responsive">
+            <table class="table table-borderless align-middle">
+                <thead class="fw-semibold text-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Görsel</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>İşlemler</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+
+                        <tr class="align-middle">
+                            <td><strong>@count</strong></td>
+                            <td><img src="@item.ImageUrl" style="height:75px; width:75px; border-radius:50%" /></td>
+                            <td>@item.Title</td>
+                            <td>@(item.Description.Length > 40 ? item.Description.Substring(0, 40) + "..." : item.Description)  </td>
+                            <td class="text-center">
+                                <button type="button" onclick="confirmDelete('/Admin/About/DeleteAbout/@item.Id')" class="btn btn-danger btn-circle">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <a href="/Admin/About/UpdateAbout/@item.Id" class="btn btn-primary btn-circle">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+

@@ -1,5 +1,7 @@
-﻿using AITech.WebUI.Services.BannerServices;
+﻿using AITech.WebUI.Services.AboutServices;
+using AITech.WebUI.Services.BannerServices;
 using AITech.WebUI.Services.CategoryServices;
+using AITech.WebUI.Services.FeatureServices;
 using AITech.WebUI.Services.GeminiServices;
 using AITech.WebUI.Services.ProjectServices;
 using FluentValidation;
@@ -15,6 +17,12 @@ namespace AITech.WebUI.Extensions
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IBannerService, BannerService>();
+            services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IFeatureService, FeatureService>();
+
+
+
+
             services.AddScoped<IGeminiService, GeminiService>();
 
             services.AddFluentValidationAutoValidation()
