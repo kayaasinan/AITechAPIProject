@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AITech.WebUI.Services.BannerServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AITech.WebUI.ViewComponents.UI_Layout
 {
-    public class _UILayoutHero : ViewComponent
+    public class _UILayoutHero(IBannerService _bannerService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var banners = await _bannerService.GetAllAsync();
+            return View(banners);
         }
     }
 }
