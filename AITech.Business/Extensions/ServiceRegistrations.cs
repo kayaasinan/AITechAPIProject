@@ -7,6 +7,7 @@ using AITech.Business.Services.FAQServices;
 using AITech.Business.Services.FeatureServices;
 using AITech.Business.Services.ProjectServices;
 using AITech.Business.Services.SocialServices;
+using AITech.Business.Services.TestimonialServices;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AITech.Business.Extensions
@@ -24,6 +25,7 @@ namespace AITech.Business.Extensions
             services.AddScoped<IChooseService, ChooseService>();
             services.AddScoped<IFAQService, FAQService>();
             services.AddScoped<ISocialService, SocialService>();
+            services.AddScoped<ITestimonialService, TestimonialService>();
         }
     }
 }

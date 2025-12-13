@@ -1,0 +1,42 @@
+﻿using AITech.Business.Services.TestimonialServices;
+using AITech.DTO.TestimonialDtos;
+using Microsoft.AspNetCore.Mvc;
+
+namespace AITech.API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class TestimonialsController(ITestimonialService _testimonialService) : ControllerBase
+    {
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var testimonials = await _testimonialService.TGetAllAsync();
+            return Ok(testimonials);
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var testimonial = await _testimonialService.TGetByIdAsync(id);
+            return Ok(testimonial);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _testimonialService.TDeleteAsync(id);
+            return NoContent();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateTestimonialDto dto)
+        {
+            await _testimonialService.TCreateAsync(dto);
+            return Created();
+        }
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateTestimonialDto dto)
+        {
+            await _testimonialService.TUpdateAsync(dto);
+            return NoContent();
+        }
+    }
+}

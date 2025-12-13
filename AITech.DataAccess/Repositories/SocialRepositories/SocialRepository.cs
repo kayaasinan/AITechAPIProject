@@ -4,9 +4,9 @@ using AITech.Entity.Entities;
 
 namespace AITech.DataAccess.Repositories.SocialRepositories
 {
-    public class SocialRepository : GenericRepository<Social>, ISocialRepository
+    public class TestimonailRepository : GenericRepository<Social>, ISocialRepository
     {
-        public SocialRepository(AppDbContext context) : base(context)
+        public TestimonailRepository(AppDbContext context) : base(context)
         {
         }
     }
