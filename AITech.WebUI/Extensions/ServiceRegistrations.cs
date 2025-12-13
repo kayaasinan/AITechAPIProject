@@ -1,4 +1,5 @@
-﻿using AITech.WebUI.Services.AboutServices;
+﻿using AITech.WebUI.Services.AboutItemServices;
+using AITech.WebUI.Services.AboutServices;
 using AITech.WebUI.Services.BannerServices;
 using AITech.WebUI.Services.CategoryServices;
 using AITech.WebUI.Services.ChooseServices;
@@ -6,6 +7,7 @@ using AITech.WebUI.Services.FAQServices;
 using AITech.WebUI.Services.FeatureServices;
 using AITech.WebUI.Services.GeminiServices;
 using AITech.WebUI.Services.ProjectServices;
+using AITech.WebUI.Services.SocialServices;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using System.Reflection;
@@ -20,9 +22,11 @@ namespace AITech.WebUI.Extensions
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IBannerService, BannerService>();
             services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IAboutItemService, AboutItemService>();
             services.AddScoped<IFeatureService, FeatureService>();
             services.AddScoped<IChooseService, ChooseService>();
             services.AddScoped<IFAQService, FAQService>();
+            services.AddScoped<ISocialService, SocialService>();
 
 
 

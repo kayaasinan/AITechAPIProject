@@ -1,0 +1,58 @@
+﻿
+@model List<ResultSocialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="card admin-card">
+
+    <div class="admin-header d-flex justify-content-between align-items-center">
+        <h4 class="fw-bold mb-0">Sosyal Medya Sayfası</h4>
+        <a href="/Admin/Social/CreateSocial/" class="btn btn-light text-dark fw-semibold">
+            <i class="bi bi-plus-circle me-1"></i>Sosyal Medya Ekle
+        </a>
+    </div>
+
+    <div class="admin-table">
+        <div class="table-responsive">
+            <table class="table table-borderless align-middle">
+                <thead class="fw-semibold text-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Sosyal Medya</th>
+                        <th>İşlemler</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+
+                        <tr class="align-middle">
+                            <td><strong>@count</strong></td>
+                            <td><i class="@item.Icon fa-2x"></i><a href="@item.Url" target="_blank"> @item.Name</a></td>
+                            <td class="text-center">
+                                <button type="button" onclick="confirmDelete('/Admin/Social/DeleteSocial/@item.Id')" class="btn btn-danger btn-circle">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <a href="/Admin/Social/UpdateSocial/@item.Id" class="btn btn-primary btn-circle">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
