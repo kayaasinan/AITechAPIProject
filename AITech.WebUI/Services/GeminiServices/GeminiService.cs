@@ -39,7 +39,7 @@ namespace AITech.WebUI.Services.GeminiServices
                 generationConfig=new GenerationConfig
                 {
                     temperature=0.7f,
-                    maxOutputTokens=1000,
+                    maxOutputTokens=10000,
                 }
             };
             var jsonContent = JsonConvert.SerializeObject(requestBody);
