@@ -43,5 +43,54 @@ gerçek bir web projesinde kullanmak isteyen geliştiriciler için örnek bir uy
 | Frontend | WOW.js | Scroll animasyonları |
 | Frontend | Font Awesome / Bootstrap Icons | İkon setleri |
 
+## 📸 Ekran Görüntüleri
+
+### 🌐 Anasayfa & Kullanıcı Arayüzü
+
+#### 🏠 Anasayfa
+![Anasayfa](AITech.WebUI/wwwroot/imagesAITech/home.png)
+
+#### ℹ️ Hakkımızda Sayfası
+![Hakkımızda](AITech.WebUI/wwwroot/imagesAITech/about.png)
+
+#### 🧠 Hizmetler
+![Hizmetler](AITech.WebUI/wwwroot/imagesAITech/services.png)
+
+#### ⭐ Neden Bizi Seçmelisiniz
+![Neden Biz](AITech.WebUI/wwwroot/imagesAITech/choose.png)
+
+#### 📂 Projeler
+![Projeler](AITech.WebUI/wwwroot/imagesAITech/project.png)
+
+#### 👥 Ekip
+![Takım](AITech.WebUI/wwwroot/imagesAITech/teams.png)
+
+#### 💬 Referanslar
+![Referanslar](AITech.WebUI/wwwroot/imagesAITech/testimonial.png)
+
+#### ❓ Sıkça Sorulan Sorular
+![SSS](AITech.WebUI/wwwroot/imagesAITech/faq.png)
+
+---
+
+### 🛠️ Yönetici Paneli (Admin)
+
+#### ⚙️ Admin – Hakkımızda Yönetimi
+![Admin Hakkımızda](AITech.WebUI/wwwroot/imagesAITech/admin-about.png)
+
+#### 🤖 Admin – Yapay Zeka İçerik Üretimi
+![Admin Yapay Zeka](AITech.WebUI/wwwroot/imagesAITech/admin-ai.png)
+
+#### 📊 Admin – Proje Yönetimi
+![Admin Projeler](AITech.WebUI/wwwroot/imagesAITech/admin-projects.png)
+
+#### 🌐 Admin – Sosyal Medya Yönetimi
+![Admin Sosyal Medya](AITech.WebUI/wwwroot/imagesAITech/admin-social.png)
+
+#### 👤 Admin – Ekip Yönetimi
+![Admin Takım](AITech.WebUI/wwwroot/imagesAITech/admin-teams.png)
+
+#### 🗣️ Admin – Referans & Yorum Yönetimi
+![Admin Referanslar](AITech.WebUI/wwwroot/imagesAITech/admin-testi.png)
 
 
