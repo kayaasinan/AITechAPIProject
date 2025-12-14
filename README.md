@@ -69,7 +69,7 @@ gerçek bir web projesinde kullanmak isteyen geliştiriciler için örnek bir uy
 ![Referanslar](AITech.WebUI/wwwroot/imagesAITech/testimonial.png)
 
 #### ❓ Sıkça Sorulan Sorular
-![SSS](AITech.WebUI/wwwroot/imagesAITech/faq.png)
+![SSS](AITech.WebUI/wwwroot/imagesAITech/faq.png?raw=true)
 
 ---
 
