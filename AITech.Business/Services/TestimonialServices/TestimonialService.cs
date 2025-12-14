@@ -8,9 +8,16 @@ namespace AITech.Business.Services.TestimonialServices
 {
     public class TestimonialService(ITestimonialRepository _testimonialRepository, IUnitOfWork _unitOfWork) : ITestimonialService
     {
+        public async Task<List<ResultTestimonialDto>> GetAllByStatusFalseAsync()
+        {
+            var testimonials = await _testimonialRepository.GetAllByStatusFalseAsync();
+            return testimonials.Adapt<List<ResultTestimonialDto>>();
+        }
+
         public async Task TCreateAsync(CreateTestimonialDto createDto)
         {
             var testimonial = createDto.Adapt<Testimonial>();
+            testimonial.Status = true;
             await _testimonialRepository.CreateAsync(testimonial);
             await _unitOfWork.SaveChangesAsync();
         }
@@ -26,7 +33,7 @@ namespace AITech.Business.Services.TestimonialServices
 
         public async Task<List<ResultTestimonialDto>> TGetAllAsync()
         {
-            var testimonials = await _testimonialRepository.GetAllAsync();
+            var testimonials = await _testimonialRepository.GetAllByStatusTrueAsync();
             return testimonials.Adapt<List<ResultTestimonialDto>>();
         }
 

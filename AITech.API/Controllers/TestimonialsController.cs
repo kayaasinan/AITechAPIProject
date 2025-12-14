@@ -14,6 +14,12 @@ namespace AITech.API.Controllers
             var testimonials = await _testimonialService.TGetAllAsync();
             return Ok(testimonials);
         }
+        [HttpGet("GetAllStatusFaslse")]
+        public async Task<IActionResult> GetAllStatusFaslse()
+        {
+            var testimonials = await _testimonialService.GetAllByStatusFalseAsync();
+            return Ok(testimonials);
+        }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {

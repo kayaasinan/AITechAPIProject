@@ -1,0 +1,12 @@
+﻿@model List<ResultSocialDto>
+@*
+      UI Team Social Dto
+*@
+<div class="d-flex justify-content-center mt-3">
+    @foreach (var item in Model)
+    {
+        <a class="btn btn-square btn-primary m-1" href="">
+            <i class="@item.Icon"></i>
+        </a>
+    }
+</div>

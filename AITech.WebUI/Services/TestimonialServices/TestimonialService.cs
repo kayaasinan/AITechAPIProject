@@ -21,6 +21,11 @@ namespace AITech.WebUI.Services.TestimonialServices
             return await _client.GetFromJsonAsync<List<ResultTestimonialDto>>("testimonials");
         }
 
+        public async Task<List<ResultTestimonialDto>> GetAllByStatusFalseAsync()
+        {
+            return await _client.GetFromJsonAsync<List<ResultTestimonialDto>>("testimonials/GetAllStatusFaslse");
+        }
+
         public async Task<UpdateTestimonialDto> GetByIdAsync(int id)
         {
             return await _client.GetFromJsonAsync<UpdateTestimonialDto>($"testimonials/{id}");

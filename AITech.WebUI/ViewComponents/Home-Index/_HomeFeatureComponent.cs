@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AITech.WebUI.Services.ChooseServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AITech.WebUI.ViewComponents.Home_Index
 {
-    public class _HomeFeatureComponent : ViewComponent
+    public class _HomeFeatureComponent(IChooseService _chooseService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var chooses = await _chooseService.GetAllAsync();
+            return View(chooses);
         }
     }
 }

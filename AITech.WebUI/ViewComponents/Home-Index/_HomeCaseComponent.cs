@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AITech.WebUI.Services.ProjectServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AITech.WebUI.ViewComponents.Home_Index
 {
-    public class _HomeCaseComponent : ViewComponent
+    public class _HomeCaseComponent(IProjectService _projectService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var projects = await _projectService.GetAllAsync();
+            return View(projects);
         }
     }
 }

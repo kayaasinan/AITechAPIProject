@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AITech.WebUI.Services.TestimonialServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AITech.WebUI.ViewComponents.Home_Index
 {
-    public class _HomeTeamComponent : ViewComponent
+    public class _HomeTeamComponent(ITestimonialService _testimonialService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var teams = await _testimonialService.GetAllByStatusFalseAsync();
+            return View(teams);
         }
     }
 }
