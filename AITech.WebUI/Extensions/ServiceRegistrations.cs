@@ -31,8 +31,6 @@ namespace AITech.WebUI.Extensions
             services.AddScoped<ITestimonialService, TestimonialService>();
 
 
-
-
             services.AddScoped<IGeminiService, GeminiService>();
 
             services.AddFluentValidationAutoValidation()
